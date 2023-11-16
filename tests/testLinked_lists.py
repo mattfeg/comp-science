@@ -1,4 +1,4 @@
-from data_structures._linkedLists import LinkedList
+from data_structures.linked_lists._linkedLists import LinkedList
 
 LList01 = LinkedList()
 LList01.append(1)
