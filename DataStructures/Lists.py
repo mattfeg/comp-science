@@ -18,6 +18,26 @@ class LinkedList():
             currentElement = currentElement.next
         return currentElement
 
+    def __len__(self):
+        if self.isEmpty:
+            return 0
+        currentElement = self.head
+        count = 1
+        while currentElement.next != None:
+            count += 1
+            currentElement = currentElement.next
+        return count
+
+    def __getitem__(self, index):
+        if self.isEmpty:
+            return
+        currentElement = self.head
+        for i in range(index):
+            if currentElement.next == None:
+                return
+            currentElement = currentElement.next
+        return currentElement.value
+
     def append(self,value):
         if self.isEmpty:
             self.head = Element(value)
