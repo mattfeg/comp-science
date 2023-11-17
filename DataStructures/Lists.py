@@ -38,6 +38,29 @@ class LinkedList():
             currentElement = currentElement.next
         return currentElement.value
 
+    def __setitem__(self, index, value):
+        if self.isEmpty:
+            return
+        currentElement = self.head
+        for i in range(index):
+            if currentElement.next == None:
+                return
+            currentElement = currentElement.next
+        currentElement.value = value
+
+    def __delitem__(self, index):
+        if self.isEmpty:
+            return
+        if index == 0:
+            self.head = self.head.next
+            return
+        currentElement = self.head
+        for i in range(index-1):
+            if currentElement.next == None:
+                return
+            currentElement = currentElement.next
+        currentElement.next = currentElement.next.next
+
     def append(self,value):
         if self.isEmpty:
             self.head = Element(value)
