@@ -1,0 +1,1 @@
+from .classes.lists import LinkedList
